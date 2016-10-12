@@ -1,0 +1,35 @@
+//klanten.json
+[
+    {
+    "id": 1,
+    "naam"        : "Shell BV",
+	"straat"      : "Oliestraat 23",
+	"plaats"      : "Amsterdam",
+	"debiteurennummer" : 1001,
+	"projecten" : ["Olievlek","Gasstation","Olietanker"]
+	},
+    {
+    "id": 2,
+    "naam"        : "Unilever",
+	"straat"      : "Zeepeg 123",
+	"plaats"      : "Rotterdam",
+	"debiteurennummer" : 1002,
+	"projecten" : ["prj1","prj2","prj3"]
+	 },
+     {
+    "id": 3,
+    "naam"        : "Fortis NL",
+	"straat"      : "Geldallee 1013",
+	"plaats"      : "Utrecht",
+	"debiteurennummer" : 1003,
+	"projecten" : ["prj1","prj2","prj3"]
+	 },
+     {
+    "id": 4,
+    "naam"        : "Philips",
+	"straat"      : "Lichtboulevard 234",
+	"plaats"      : "Eindhoven",
+	"debiteurennummer" : 1004,
+	"projecten" : ["prj1","prj2","prj3"]
+	 }
+]

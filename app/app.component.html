@@ -1,0 +1,76 @@
+<!-- app.component.html -->
+<div class="row titlerow">
+<div class="col-md-12"><h1>{{ title }}</h1><div>
+</div> <!-- einde row 1 -->
+<div class="row row2">
+<div class="col-md-4">
+	<br>
+	<ul (mouseover)="klantIdInSchermpje()" class="list-group" *ngIf="showKlanten">
+		<li class="list-group-item"
+			*ngFor="#klant of klanten" (click)="klantenLijstClick(klant)">{{ klant.name }}
+			<span class="badge">{{klant.waardering}}</span>
+		</li>
+	</ul>
+	<!-- id schermje bij nouseover -->
+	<h3 *ngIf="klantIdVisible">ID klant: {{currentId}}</h3>
+	<!-- checkbox waarmee je de klanten lijst kan weghalen -->
+	<br />
+		<input type="checkbox" (change)="toggleKlanten()"> {{ toggleMsg }}
+	<br />
+</div> <!-- einde van col-4 (1)-->
+
+<div class="col-md-6">
+	<h4>De klant details laten zien via @input:</h4>
+	<div *ngIf="currentKlant">
+		<klant-detail [klant]="currentKlant" (rating)="updateSelectedKlantRating($event)"></klant-detail>
+	</div>	
+</div> <!-- einde van col 6, nu tot 10 -->
+
+<div class="col-md-2">
+	<h4 *ngIf="currentKlant">Huidige plaats:<br>{{currentKlant.plaats}}</h4>
+</div>
+</div> <!-- einde row 2 -->
+
+<div class="row row3">
+<div class="col-md-4">
+	<h2>Een klant toevoegen:</h2>
+	
+	<input type="text" class="input-lg"
+		placeholder = "Nieuwe klant..."
+		#txtKlant
+		(keyup)="changeKlant(txtKlant.value)"><br />
+	<h3>{{newKlant}}</h3>
+	<button class="btn btn-success"
+		(click)="addKlant(txtKlant.value)">
+		Toevoegen
+	</button>
+</div> <!-- einde van col-4> -->
+<div class="col-md-4">
+	<h2>Button met een Alert</h2>
+	<button (click)="btnClick()" class="btn btn-primary">Bestel</button>
+	<br /> 
+</div> <!-- einde van col-4 (2), tot 8 > -->
+
+<div class="col-md-4">
+	<h2>Nu een drop down box met alle klanten:</h2>
+	<select class="selectpicker">
+    	<option *ngFor="#klant of klanten">{{klant.name}}</option>
+	</select>
+	
+
+</div> <!-- einde van col-4 (3), tot:12> -->
+<br/>
+
+</div> <!-- einde van row 3 -->
+<div class = "row row4">
+	<div class="col-md-6">
+			<h4 title="titletekst">Attribute binding, met deze knop toggle je het Hidden attribute veranderen in de volgende tekst:</h4>
+			<div [hidden] = "textVisible">Deze div kan je laten verdwijnen</div>
+			<button class="btn btn-success" (click)="toggleText()">Toggle Text</button>
+	</div> <!-- einde van r4-c1, tot 6 > -->
+	<div class="col-md-6">
+		<h4 title="Dit is de hover over teksts mbv title attribuut">
+			Event bus, subscribing en observables:</h4>
+			<viewSchilderWens></viewSchilderWens>
+	</div> <!-- einde van r4-c2, tot 12 > -->
+</div> <!-- einde van row 4 -->
