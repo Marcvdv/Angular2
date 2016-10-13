@@ -6,6 +6,7 @@ import {DuurzaamComponent} from "./duurzaam.component";
 import {KlantService} from "./services/klant.service";
 import {SchilderWensService} from "./services/schilderwens.service";
 import {RoutingComponent} from "./routing.component";
+import {LocalStorageComponent} from "./localStorage.component";
 
 @Component({
 	selector  : 'home-component',
@@ -15,6 +16,7 @@ import {RoutingComponent} from "./routing.component";
 		  <a [routerLink]="['Duurzaam']" class="btn btn-primary">Duurzaam Schilderen</a>
 		  <a [routerLink]="['Routing']" class="btn btn-primary">Routing testen</a>
 		  <a [routerLink]="['RoutingMetParam',{name:paramNaam,id:paramId}]" class="btn btn-primary">Routing met param</a>
+		  <a [routerLink]="['LocalStorage']" class="btn btn-primary">LocalStorage</a>
 		  <hr>
 		  <!-- Hier dynamisch componenten tonen -->
 		  <router-outlet></router-outlet>
@@ -30,7 +32,8 @@ import {RoutingComponent} from "./routing.component";
 	{path: '/home', name: 'Home', component: AppComponent},
 	{path: '/duurzaam', name: 'Duurzaam', component: DuurzaamComponent},
 	{path: '/routing', name: 'Routing', component: RoutingComponent},
-	{path: '/routing/:name/:id', name: 'RoutingMetParam', component: RoutingComponent}
+	{path: '/routing/:name/:id', name: 'RoutingMetParam', component: RoutingComponent},
+	{path: '/localstorage', name: 'LocalStorage', component: LocalStorageComponent}
 
 ])
 
